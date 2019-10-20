@@ -3,14 +3,29 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var mysql = require('mysql')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
-var moviesRouter = require('./routes/movies');
-app.use('/api/movies', moviesRouter);
+var mainRouter = require('./routes/main');
+app.use('/api/main', mainRouter);
+
+var connection = mysql.createConnection({
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'ajou', //자신의 DB 비밀번호로 설정
+  database: 'project' //자신의 프로젝트 이름으로 설정
+})
+connection.connect(function (err) {   
+  if (err) {     
+    console.error('mysql connection error');     
+    console.error(err);     
+    throw err;   
+  } 
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
