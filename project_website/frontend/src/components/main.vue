@@ -1,4 +1,10 @@
 <template>
+<body>
+  <h1>이미지를 업로드하면 찾아드립니다!</h1>
+  <router-link :to="{name: 'detail', params: {id: 1}}">찾기</router-link>
+  <p>※주의 사항</p>
+  <p>이미지를 요래요래 업로드하세요~</p>
+</body>
 </template>
 <script>
 export default {

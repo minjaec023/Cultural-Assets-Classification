@@ -1,32 +1,32 @@
 <template>
 <body>
   <div id="total">
-  <!--
-  <div>  
-    <img src = "./assets/background.jpg" id = "bg">
-  </div>-->
   <div id = "top">
     <h1>서울시 관광명소 찾기</h1>
-    <input type = "text" v-model = "message" id = "text" placeholder="이미지 업로드">
+    <input type = "file" v-model = "message" id = "text" placeholder="이미지 업로드">
     <img src = "./assets/search.png" id = "search">
   </div>
   <div>
     <hr>
   </div>
+  <router-view></router-view>
+  
+  
+  <!--
   <div id="title">
     
     <img src = "./assets/12_Gyeongbokgung Palace.jpg" id = "ex_img">
     <br><span id="name"> <경복궁(Gyeongbokgung)></span>
-    <!--<span id="detail">-->
+   
   </div>
   <div id="detail">
       <br><br><p>이름: 경복궁</p>
       <p>설명: 경복궁은 조선 왕조 제일의 법궁입니다. 북으로 북악산을 기대어 자리 잡았고 정문인 광화문 앞으로는 넓은 육조거리(지금의 세종로)가 펼쳐져, 왕도인 한양(서울) 도시 계획의 중심이기도 합니다.</p>
-      <p>상세 페이지(클릭)</p>
-    
-  </div>  
-    <main></main>
-    <router-view></router-view>
+      <router-link :to="{name: 'detail', params: {id: 1}}">상세 페이지(클릭)</router-link>
+  
+  </div>  -->
+  <!--  <main></main>
+    <router-view></router-view>-->
   </div>
 </body>
 </template>
@@ -83,15 +83,14 @@ hr{
   color: #fff;
   background-color: #fff;
   height: 1px;
-  width: 60%;
+  width: 70%;
 }
 #ex_img{
-  
   padding: 10px;
-  width: 500px;
+  width: 60%;
 }
 #title{
-  margin-left: 25%;
+  margin-left: 5%;
   margin-top: 80px;
   display: inline-block;
   text-align: center;
@@ -102,8 +101,7 @@ hr{
 }
 #detail{
   display: inline-block;
-  width: 500px;
-  margin-left: 5%;
+  width: 450px;
 }
 p{
   font-size: 200%;
