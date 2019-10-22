@@ -2,20 +2,26 @@
   <body>
     <h2>이미지를 업로드하면 찾아드립니다!</h2>
 
+  <form method="post" action="/id" enctype="multipart/form-data">
     <div class="dropbox">
-      <input class="input-file" type="file" name="myfile" @change="upload($event.target.name, $event.target.files)"@drop="upload($event.target.name, $event.target.files)">
+      <!--<input class="input-file" type="file" name="myfile" @change="upload($event.target.name, $event.target.files)"@drop="upload($event.target.name, $event.target.files)">
+      -->
+      <input type="file" name="photo" id="photo"/>
+      
       <h2 width="350px">파일을 드래그해서 드랍해주세요. 
       </h2>
     </div>
+    <input type="submit" id="upload" value="업로드">
+    </form>
+
     <br>
     <p id="find_section">
       <router-link :to="{name: 'detail', params: {id: 1}}" id="link">
-      <button id="find">
-        검색
-      </button>
+      <input type="button" id="find" value="상세보기">
       </router-link>
     </p>
     <br>
+
     <p>※주의 사항: 건물이나 문화재의 전체 모습이 나오도록 찍어 주세요.</p>
     <div id="OX">
       <span>(O)</span>
@@ -43,7 +49,7 @@ export default {
       movies: []
     }
   },
-  methods:{
+  /*methods:{
     upload: function(name, files) {
           const formData = new FormData();
           formData.append(name, files[0], files[0].name);
@@ -52,7 +58,7 @@ export default {
             console.log(response);
           })
         }
-  }
+  }*/
 }
 </script>
 
