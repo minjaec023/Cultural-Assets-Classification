@@ -2,7 +2,7 @@
   <div class="detail_page">
     <div id="title">
       <img src = "@/assets/12_Gyeongbokgung Palace.jpg" id = "ex_img">
-      <br><span id="name"> <경복궁(Gyeongbokgung)></span> 
+      <br><a id="name"> <경복궁(Gyeongbokgung)></a> 
     </div>
 
     <div id="detail">
@@ -13,6 +13,7 @@
   <div>
     {{movie.name_Korean}}
     </div>
+  <div>변경사항적용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
   </div>
 
 </template>
@@ -24,14 +25,13 @@
 export default {
   created: function () {
     var id = this.$route.params.id;
-    var page = 1;
-    console.log(id);
-    console.log("id")
-    console.log(name);
+    //var page = 1;
+    //console.log(id);
+    //console.log("id")
+    //console.log(name);
     this.$http.get('/api/main/${page}')
         .then((response) => {
           this.movie = response.data[1];
-          console.log("kkkkkkkkkkkkkkkkkkkkkkkk"+this.movie);
         })
   },
   data: function () {
@@ -45,11 +45,11 @@ export default {
 <style>
 #ex_img{
   padding: 10px;
-  width: 60%;
+  width: 450px;
 }
 #title{
-  margin-left: 5%;
-  margin-top: 80px;
+  margin-left: 18%;
+  margin-top: 60px;
   display: inline-block;
   text-align: center;
 }
@@ -57,5 +57,9 @@ export default {
 #detail{
   display: inline-block;
   width: 450px;
+}
+#name{
+  font-size: 100%;
+  text-align: center;
 }
 </style>

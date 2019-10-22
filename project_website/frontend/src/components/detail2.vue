@@ -10,7 +10,7 @@ export default {
     var id = this.$route.params.id;
     console.log(id);
     console.log("id")
-    this.$http.get('/api/main/${id}')
+    this.$http.get('/api/main/${page}')
         .then((response) => {
           this.movie = response.data[id-1]
         })
