@@ -7,8 +7,15 @@
       <h2 width="350px">파일을 드래그해서 드랍해주세요. 
       </h2>
     </div>
-
-    <router-link :to="{name: 'detail', params: {id: 1}}">찾기</router-link>
+    <br>
+    <p id="find_section">
+      <router-link :to="{name: 'detail', params: {id: 1}}" id="link">
+      <button id="find">
+        검색
+      </button>
+      </router-link>
+    </p>
+    <br>
     <p>※주의 사항: 건물이나 문화재의 전체 모습이 나오도록 찍어 주세요.</p>
     <div id="OX">
       <span>(O)</span>
@@ -69,6 +76,7 @@ export default {
   }
   #OX{
     text-align: center;
+    font-size: 150%;
   }
   #O_img, #X_img{
     width: 500px;
@@ -86,7 +94,7 @@ export default {
     outline: 2px dashed #aaa;
     background: #7fb4dd;
     width: 350px;
-    height: 200px;
+    height: 160px;
     position: relative; 
      margin: 0 auto;
   } 
@@ -104,5 +112,18 @@ export default {
     top:0;
     left:0;
      z-index: 3;
+  }
+  #find{
+    text-align: center;
+    font-size: 100%;
+    display: inline;
+    font-family: 경기천년바탕_Regular;
+  }
+  #link{
+    text-align: center;
+    text-decoration: none;
+  }
+  #find_section{
+    text-align: center;
   }
 </style>
