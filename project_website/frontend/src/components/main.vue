@@ -24,8 +24,8 @@
 
     <p>※주의 사항: 건물이나 문화재의 전체 모습이 나오도록 찍어 주세요.</p>
     <div id="OX">
-      <span>(O)</span>
-      <span>(X)</span>
+      <span id = "O">(O)</span>
+      <span id = "X">(X)</span>
     </div>
     <div id="OXimg">
       <img id="O_img" src="../assets/12_Gyeongbokgung Palace.jpg">
@@ -92,9 +92,11 @@ export default {
   #OXimg{
     text-align: center;
   }
-  span{
-    margin-left: 266px;
+  #O{
     margin-right: 266px;
+  }
+  #X{
+    margin-left: 266px;    
   }
   .dropbox {
     outline: 2px dashed #aaa;
