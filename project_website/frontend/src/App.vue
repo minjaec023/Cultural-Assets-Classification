@@ -2,16 +2,15 @@
 <body>
   <div id="total">
   <div id = "top">
+  <div name="castle"><img id="goong" src="./assets/castle.png"></div>
     <h1>서울시 관광명소 찾기</h1>
-    <input type = "file" v-model = "message" id = "text" placeholder="이미지 업로드">
+    <!--<input type = "file" v-model = "message" id = "text" placeholder="이미지 업로드">-->
     <img src = "./assets/search.png" id = "search">
   </div>
   <div>
     <hr>
   </div>
-  <router-view></router-view>
-  
-  
+  <router-view></router-view>  
   <!--
   <div id="title">
     
@@ -40,13 +39,26 @@ export default {
     HelloWorld
   }
 }
+  //font-family: 'Yeon Sung', cursive;
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap&subset=korean');
+
+@font-face {
+  font-family: "SangSangFlowerRoad";
+  font-style: normal;
+  src: url("./assets/SangSangFlowerRoad.otf");
+}
+h1{
+  font-family: SangSangFlowerRoad;
+  width: 100%;
+  height: 100%;
+  display: inline;
+}
+
 html{
   background-image: url('./assets/background.jpg');
-  font-family: 'Yeon Sung', cursive;
   width: 100%;
   height: 100%;
 }
@@ -72,10 +84,10 @@ html{
 }
 #search{
   position : relative;
-  width : 42px;
-  height : 42px;
-  top : -16px;
-  left : 3px;
+  width : 50px;
+  height : 50px;
+  top : 0px;
+  left : 25px;
 }
 hr{ 
   border: none;
@@ -108,5 +120,11 @@ p{
 }
 #image{
   width: 500px;
+}
+#castle{
+  display: inline;
+}
+#goong{
+  width: 650px;
 }
 </style>

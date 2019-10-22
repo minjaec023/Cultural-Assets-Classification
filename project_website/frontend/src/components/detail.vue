@@ -10,6 +10,9 @@
         <p>설명: 경복궁은 조선 왕조 제일의 법궁입니다. 북으로 북악산을 기대어 자리 잡았고 정문인 광화문 앞으로는 넓은 육조거리(지금의 세종로)가 펼쳐져, 왕도인 한양(서울) 도시 계획의 중심이기도 합니다.</p>
         <router-link :to="{name: 'detail2', params: {id: 2}}">상세 페이지(클릭)</router-link>
     </div>
+  <div>
+    {{movie.name_Korean}}
+    </div>
   </div>
 
 </template>
@@ -21,11 +24,14 @@
 export default {
   created: function () {
     var id = this.$route.params.id;
+    var page = 1;
     console.log(id);
     console.log("id")
-    this.$http.get('/api/main/${id}')
+    console.log(name);
+    this.$http.get('/api/main/${page}')
         .then((response) => {
-          this.movie = response.data[id-1]
+          this.movie = response.data[1];
+          console.log("kkkkkkkkkkkkkkkkkkkkkkkk"+this.movie);
         })
   },
   data: function () {
