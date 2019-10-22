@@ -1,19 +1,27 @@
 <template>
   <body>
     <h2>이미지를 업로드하면 찾아드립니다!</h2>
-
-  <form method="post" action="/id" enctype="multipart/form-data">
+<!--
+  <form method="post" action="/" enctype="multipart/form-data">
+  -->  
     <div class="dropbox">
-      <!--<input class="input-file" type="file" name="myfile" @change="upload($event.target.name, $event.target.files)"@drop="upload($event.target.name, $event.target.files)">
-      -->
-      <input type="file" name="photo" id="photo"/>
+      <input class="input-file" type="file" name="myfile" @change="upload($event.target.name, $event.target.files)"@drop="upload($event.target.name, $event.target.files)">
       
+      <!--<input type="file" name="photo" id="photo"/>
+      -->
       <h2 width="350px">파일을 드래그해서 드랍해주세요. 
       </h2>
     </div>
+    <!--
     <input type="submit" id="upload" value="업로드">
-    </form>
-
+    </form>-->
+    
+    <!--
+    <form id="myForm" @submit.prevent="sendPost">
+  <input type="file" name="photo" v-model="title"><br>
+  <textarea name="body" v-model="body"></textarea><br>
+  <button>Send</button>
+</form>-->
     <br>
     <p id="find_section">
       <router-link :to="{name: 'detail', params: {id: 1}}" id="link">
@@ -33,14 +41,15 @@
     </div>
   </body>
 </template>
-
+<script src="//unpkg.com/vue"></script>
+<script src="//unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 export default {
   created () {
     // 컴포넌트가 생성될 때, /api/main에 요청을 보냅니다.          
     this.$http.get('/api/main')
         .then((response) => {
-          this.movies = response.data
+          //this.movies = response.data
           console.log("kkkkkkk");
         })
   },
@@ -49,7 +58,7 @@ export default {
       movies: []
     }
   },
-  /*methods:{
+  methods:{
     upload: function(name, files) {
           const formData = new FormData();
           formData.append(name, files[0], files[0].name);
@@ -58,7 +67,7 @@ export default {
             console.log(response);
           })
         }
-  }*/
+  },
 }
 </script>
 

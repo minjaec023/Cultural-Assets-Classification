@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql')
 var ps = require('python-shell')
-const multer = require('multer');
+
 classnum = 0;
 router.use('/upload', express.static('upload'));
 
@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
       throw err;   
     } 
   });
-
+/*
   var storage = multer.diskStorage({
     destination: function(req, file, cb){
         cb(null, 'upload/');
@@ -30,8 +30,11 @@ var connection = mysql.createConnection({
     }
   });
 
-  var upload = multer({storage: storage});
-
+  const upload = multer({
+    storage: storage
+  }).single('myfile');
+  
+*/
 router.get('/', function (req, res, next) {
     connection.query('SELECT * FROM project.culture', function(err, datas, fields) {
         if(!err){
@@ -42,9 +45,12 @@ router.get('/', function (req, res, next) {
           console.log('Error!!', err);
       });
 });
-
-router.post('/id', upload.single('photo'), function(req,res){
+/*
+router.post('/', (req,res) => {
   console.log("skjdfkjskfjlsdfsdf");
+  upload(req, res, err => {
+    if(err) console.log(err);
+  });
   var id = req.body.id;
   console.log(id);
   var value1 = req.files[0].filename;
@@ -65,7 +71,7 @@ router.post('/id', upload.single('photo'), function(req,res){
   classnum = results[2];
   });
 });
-
+*/
 router.get('/:id', function (req, res, next) {
     //console.log("sdfkjsdlfkdlskfdf")
     //var id= parseInt(req.params.id, 10)
