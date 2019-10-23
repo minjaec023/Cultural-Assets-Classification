@@ -67,6 +67,7 @@ export default {
   align-content: center;
   font-family: 경기천년바탕_Regular;
   display: flex;
+  margin-bottom: 10%;
 }
 #link2{
   text-decoration: none;

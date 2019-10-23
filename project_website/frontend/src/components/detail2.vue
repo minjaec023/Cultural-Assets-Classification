@@ -5,6 +5,7 @@
         <p id="tt"><strong><{{movie.name_Korean}}></strong></p>
         <strong><li class="list">상세설명</li></strong>
         <p class="info">: {{movie.info_Korean}}</p>
+        <br><br><br>
         <strong><li class="list">위치 및 개방 시간</li></strong>
         <p class="info">: {{movie.detail_Korean}}</p>
     </div>
@@ -49,6 +50,7 @@ export default {
 #test{
   display: inline-block;
   width: 70%;
+  margin-bottom:10%;
 }
 .test2{
   text-align: center;

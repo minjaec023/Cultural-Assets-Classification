@@ -2,11 +2,13 @@
 <body>
   <div id="total">
   <div id = "top">
-  <div name="castle"><img id="goong" src="./assets/castle.png"></div>
+  <div name="castle"><router-link :to="{name: 'main'}"><img id="goong" src="./assets/castle.png"></router-link></div>
     <h1>서울시 관광명소 찾기</h1>
-    <!--<input type = "file" v-model = "message" id = "text" placeholder="이미지 업로드">-->
     <img src = "./assets/search.png" id = "search">
   </div>
+    <router-link :to="{name: 'main_eng'}"><input type="button" value="English Main"></router-link>
+    <router-link :to="{name: 'main'}"><input type="button" value="한국어 메인"></router-link>
+    <!--<input type = "file" v-model = "message" id = "text" placeholder="이미지 업로드">-->
   <div>
     <hr>
   </div>
@@ -37,6 +39,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  methods:{
+    main: function(){
+
+    }
   }
 }
   //font-family: 'Yeon Sung', cursive;
